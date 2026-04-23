@@ -1,0 +1,23 @@
+name: devcash CI
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Check devcash files
+        run: |
+          echo "Checking devcash files..."
+          ls -la
+          echo "README exists:" && cat README.md
+          echo "index.html exists:" && cat index.html
+          echo "All checks passed!"
