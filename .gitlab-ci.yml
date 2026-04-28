@@ -1,0 +1,11 @@
+stages:
+  - check
+check-files:
+  stage: check
+  image: alpine:latest
+  script:
+    - echo "Checking devcash files..."
+    - ls -la
+    - echo "README exists:" && cat README.md
+    - echo "index.html exists:" && cat index.html
+    - echo "All checks passed!"
